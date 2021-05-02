@@ -36,7 +36,7 @@ while x<50000:
     for index, row in rslt_df.iterrows():
         df_index= index
         sessions.append(row['sessions'])
-        for s in sessions:
+    for s in sessions:
             for session in s:
                 if session['min_age_limit']==18:
                     if session['available_capacity'] >0:
@@ -48,6 +48,7 @@ while x<50000:
                         date = session['date']
                         txt = "Center: "+str(center_name)+"\nPincode: "+str(pincode)+"\nFee Type: "+str(fee_type)+"\nAvailable Capacity: "+str(availability)+"\nDate: "+str(date)+"\nSign up: https://selfregistration.cowin.gov.in/"
                         telegram_send.send(messages=[txt])
+                        # print(txt)
     print('Thane Done. Sleeping')
     b = time.time()
     if b-a<60:
@@ -63,7 +64,7 @@ while x<50000:
     for index, row in rslt_df.iterrows():
         df_index = index
         sessions.append(row['sessions'])
-        for s in sessions:
+    for s in sessions:
             for session in s:
                 if session['min_age_limit'] == 18:
                     if session['available_capacity'] > 0:
@@ -77,6 +78,8 @@ while x<50000:
                             fee_type) + "\nAvailable Capacity: " + str(availability) + "\nDate: " + str(
                             date) + "\nSign up: https://selfregistration.cowin.gov.in/"
                         telegram_send.send(messages=[txt])
+                        # print(txt)
+                        pass
     print('Mumbai Done. Sleeping.')
     b = time.time()
     if b - a < 60:
